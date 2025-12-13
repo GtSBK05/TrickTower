@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://dp6j5w0t08e4v"]
+
+[ext_resource type="Texture2D" uid="uid://dm1cqf01b0582" path="res://assets/sprites/npcs/Calliopi/Idle.png" id="1_6nk55"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynjxp"]
+atlas = ExtResource("1_6nk55")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6ok7"]
+atlas = ExtResource("1_6nk55")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ao86"]
+atlas = ExtResource("1_6nk55")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_visqq"]
+atlas = ExtResource("1_6nk55")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3sco"]
+atlas = ExtResource("1_6nk55")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0qexs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynjxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6ok7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ao86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_visqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3sco")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nk55"]
+size = Vector2(131, 83)
+
+[node name="Calliopi" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0qexs")
+animation = &"idle"
+frame_progress = 0.5906405
+
+[node name="InteractArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(-1.5, 25.5)
+shape = SubResource("RectangleShape2D_6nk55")
