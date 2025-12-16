@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c7ien1cuj7tgf"]
 
 [ext_resource type="Texture2D" uid="uid://dm1cqf01b0582" path="res://assets/sprites/npcs/Calliopi/Idle.png" id="1_e8sbl"]
-[ext_resource type="Script" uid="uid://cfabtod6lus14" path="res://scenes/npc/callliopi.gd" id="1_hnx44"]
+[ext_resource type="Script" uid="uid://cfabtod6lus14" path="res://scenes/characters/calliopi/callliopi.gd" id="1_hnx44"]
 [ext_resource type="PackedScene" uid="uid://kheihk8j77jb" path="res://interaction/interaction area/interaction_area.tscn" id="2_vw77i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw77i"]

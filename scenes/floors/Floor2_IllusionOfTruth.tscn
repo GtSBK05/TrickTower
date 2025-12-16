@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cxumve11lrf6x" path="res://assets/tilesets/floors/Tileset-Swamp.png" id="2_xqsma"]
 [ext_resource type="Texture2D" uid="uid://cdntbiqltjtwp" path="res://assets/tilesets/floors/Tileset-ExclusionZone.png" id="3_xn112"]
 [ext_resource type="Texture2D" uid="uid://dh0kls217qd6c" path="res://assets/tilesets/floors/Tileset-PowerStation.png" id="4_prmx6"]
-[ext_resource type="PackedScene" uid="uid://c1rvunvoe6a4t" path="res://scenes/player/player.tscn" id="5_xqsma"]
+[ext_resource type="PackedScene" uid="uid://c1rvunvoe6a4t" path="res://scenes/characters/player/player.tscn" id="5_xqsma"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_xn112"]
 tile_data = PackedInt32Array(0, 196608, 1, 65536, 196608, 1)

@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=4 uid="uid://ddgcq0b358fwm"]
 
 [ext_resource type="Texture2D" uid="uid://i5q4vkme7iiu" path="res://assets/tilesets/floors/castle_tileset_400p.png" id="1_rf0ac"]
-[ext_resource type="PackedScene" uid="uid://c1rvunvoe6a4t" path="res://scenes/player/player.tscn" id="2_w8we8"]
-[ext_resource type="PackedScene" uid="uid://c7ien1cuj7tgf" path="res://scenes/npc/callliopi.tscn" id="3_w8we8"]
+[ext_resource type="PackedScene" uid="uid://c1rvunvoe6a4t" path="res://scenes/characters/player/player.tscn" id="2_w8we8"]
+[ext_resource type="PackedScene" uid="uid://c7ien1cuj7tgf" path="res://scenes/characters/calliopi/callliopi.tscn" id="3_w8we8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bwj7"]
 texture = ExtResource("1_rf0ac")

@@ -1,11 +1,14 @@
 ~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
+Player: [[Hi|Hello|Howdy]], this is some dialogue.
+Calliopi: [[Hi|Hello|Howdy]], this is some dialogue2.
+Player: Here are some choices.
 - First one
-	Nathan: You picked the first one.
+	Player: You picked the first one.
+	Calliopi: You picked the first one2.
 - Second one
-	Nathan: You picked the second one.
+	Player: You picked the second one.
+	Calliopi: You picked the second one2.
 - Start again => start
 - End the conversation => END
-Nathan: For more information see the online documentation.
+Player: For more information see the online documentation.
 => END

@@ -1,6 +1,6 @@
 [gd_scene load_steps=56 format=3 uid="uid://c1rvunvoe6a4t"]
 
-[ext_resource type="Script" uid="uid://bivquktwiquey" path="res://scenes/player/player.gd" id="1_qjkh3"]
+[ext_resource type="Script" uid="uid://bivquktwiquey" path="res://scenes/characters/player/player.gd" id="1_qjkh3"]
 [ext_resource type="Texture2D" uid="uid://u7yu8uid0un4" path="res://assets/sprites/player/Ein/Jump.png" id="1_yw30f"]
 [ext_resource type="Texture2D" uid="uid://df3j4a3fpgobn" path="res://assets/sprites/player/Ein/Dead.png" id="2_75vfm"]
 [ext_resource type="Texture2D" uid="uid://b67o03lorcyg" path="res://assets/sprites/player/Ein/Idle.png" id="2_qjkh3"]

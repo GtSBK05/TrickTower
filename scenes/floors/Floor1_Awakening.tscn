@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dh0kls217qd6c" path="res://assets/tilesets/floors/Tileset-PowerStation.png" id="1_1vuup"]
 [ext_resource type="Script" uid="uid://uar1qw6psfsr" path="res://scenes/floors/Floor1_Awakening.gd" id="1_c4nkj"]
-[ext_resource type="PackedScene" uid="uid://c1rvunvoe6a4t" path="res://scenes/player/player.tscn" id="2_ujupn"]
+[ext_resource type="PackedScene" uid="uid://c1rvunvoe6a4t" path="res://scenes/characters/player/player.tscn" id="2_ujupn"]
 [ext_resource type="PackedScene" uid="uid://dohedw7pawxxj" path="res://scenes/mechanics/ascension/AscensionCircle.tscn" id="3_ujupn"]
 [ext_resource type="PackedScene" uid="uid://b58qr0t6ne1la" path="res://scenes/mechanics/floor1/PuzzleButtons.tscn" id="5_c4nkj"]
 [ext_resource type="PackedScene" uid="uid://uyd7na183hph" path="res://scenes/mechanics/floor1/PuzzlePillars.tscn" id="6_01pt3"]
