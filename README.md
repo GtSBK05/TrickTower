@@ -10,6 +10,8 @@
 | ------------- | ------------- |
 | Interaction Manager  | [Interact With Objects in Godot 4](https://youtu.be/ajCraxGAeYU?si=cjQu1_OCXZK1I8R4)  |
 | Dialogue Manager  | [Using Dialogue Manager in Godot 4](https://youtu.be/Ydzj1bT_pC8?si=5SGU71texiEqLmg4)  |
+| Customize Dialogue Manager Balloon  | [Custom dialogue balloons in Godot](https://youtu.be/Rd4bZEX2RCg?si=SdtGLMBuGELpLFRe)  |
+
 
 ## Plugin
 | Name  | Link | License |
