@@ -15,3 +15,30 @@
 | Name  | Link | License |
 | ------------- | ------------- | ------------- |
 | Dialogue Manager 3 | [nathanhoad/godot_dialogue_manager](https://github.com/nathanhoad/godot_dialogue_manager)  | [MIT](https://github.com/nathanhoad/godot_dialogue_manager?tab=MIT-1-ov-file)
+
+## Folder Structure
+```
+└── 📁TrickTower                           ; Root
+    └── 📁addons                             ; Plugin Folder
+        └── 📁dialogue_manager               ; Dialogue manager 3 plugin
+    └── 📁assets                             ; Assets Folder
+        └── 📁dialogues                      ; Dialogue Resources
+        └── 📁fonts                          ; Font
+        └── 📁sprites 
+            └── 📁npcs
+            └── 📁objects
+            └── 📁player
+        └── 📁tilesets
+    └── 📁autoload
+    └── 📁interaction                        ; Interaction Manager
+        └── 📁interaction area                 ; Interaction Area
+    └── 📁scenes
+        └── 📁floors
+        └── 📁mainn
+        └── 📁mechanics
+            └── 📁ascension
+            └── 📁common
+            └── 📁floor1
+        └── 📁npc
+        └── 📁player
+```
