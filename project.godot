@@ -21,6 +21,10 @@ GameManager="*res://autoload/GameManager.gd"
 InteractionManager="*res://interaction/InteractionManager.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
+[dialogue_manager]
+
+runtime/balloon_path="res://dialogue/balloon.tscn"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
@@ -59,7 +63,7 @@ interact={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://assets/dialogues/test.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/resources/test.dialogue")
 
 [rendering]
 
