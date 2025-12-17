@@ -33,7 +33,7 @@
             └── 📁player
         └── 📁tilesets
     └── 📁autoload
-    └── 📁dialogue_balloon                   ; Custom Dialogue Balloon
+    └── 📁dialogue                           ; Custom Dialogue Balloon
     └── 📁interaction                        ; Interaction Manager
         └── 📁interaction area                 ; Interaction Area
     └── 📁scenes
