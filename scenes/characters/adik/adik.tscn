@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=3 uid="uid://bfei28m2l5wce"]
+[gd_scene load_steps=11 format=3 uid="uid://bfei28m2l5wce"]
 
-[ext_resource type="Script" uid="uid://l82d767vs0wv" path="res://scenes/characters/adik/adik.gd" id="1_lbrk7"]
 [ext_resource type="Texture2D" uid="uid://dgj6r0agmx4hu" path="res://assets/sprites/adik/ElfIdle001Sheet-export.png" id="1_ojunr"]
 [ext_resource type="PackedScene" uid="uid://kheihk8j77jb" path="res://interaction/interaction area/interaction_area.tscn" id="2_4pa8f"]
 
@@ -58,7 +57,6 @@ animations = [{
 radius = 52.0
 
 [node name="Adik" type="Node2D"]
-script = ExtResource("1_lbrk7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rh5pq")
