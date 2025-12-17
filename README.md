@@ -5,6 +5,7 @@
 | ------------- | ------------- |
 | Floor 3  | [Castle Tileset](https://alchymy.itch.io/castle-tileset)  |
 | Home  | [FREE - Pixel Art Sidescroller Asset Pack 32x32 Overworld](https://gandalfhardcore.itch.io/free-pixel-art-sidescroller-asset-pack-32x32-overworld)  |
+| Adik  | [Duskborne Elf-Sylvaris](https://kiyoz.itch.io/duskborne-enemy-1)  |
 
 
 ## Resource
@@ -18,26 +19,24 @@
 ## Plugin
 | Name  | Link | License |
 | ------------- | ------------- | ------------- |
-| Dialogue Manager 3 | [nathanhoad/godot_dialogue_manager](https://github.com/nathanhoad/godot_dialogue_manager)  | [MIT](https://github.com/nathanhoad/godot_dialogue_manager?tab=MIT-1-ov-file)
+| Dialogue Manager 3 | [nathanhoad/godot_dialogue_manager](https://github.com/nathanhoad/godot_dialogue_manager)  | [MIT](https://github.com/nathanhoad/godot_dialogue_manager?tab=MIT-1-ov-file) |
+| Godot Scene Manager | [glass-brick/Scene-Manager](https://github.com/glass-brick/Scene-Manager)  | [MIT](https://github.com/glass-brick/Scene-Manager?tab=MIT-1-ov-file) |
 
 ## Folder Structure
 ```
 └── 📁TrickTower                           ; Root
     └── 📁addons                             ; Plugin Folder
-        └── 📁dialogue_manager               ; Dialogue manager 3 plugin
     └── 📁assets                             ; Assets Folder
         └── 📁fonts                          ; Font
         └── 📁sprites 
-            └── 📁npcs
-            └── 📁objects
-            └── 📁player
         └── 📁tilesets
     └── 📁autoload
     └── 📁dialogue                           ; Custom Dialogue Balloon
     └── 📁interaction                        ; Interaction Manager
         └── 📁interaction area                 ; Interaction Area
     └── 📁scenes
-        └── 📁characters
+        └── 📁characters                     ; Character Folder
+            └── 📁adik
             └── 📁calliopi
             └── 📁player
         └── 📁floors
@@ -75,4 +74,12 @@ var dialogue_resource = load("res://scenes/floors/floor3/floor3.dialogue")
 # Panggil dialogoe manager
 func _on_interact():
 	DialogueManager.show_dialogue_balloon(dialogue_resource, "start")
+```
+
+### Scene Manager (Map traversal)
+1. Tinggal dipake + specify next map
+#### Contoh
+```
+# 
+SceneManager.change_scene("res://scenes/floors/Floor1_Awakening.tscn")
 ```
