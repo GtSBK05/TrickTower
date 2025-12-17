@@ -26,7 +26,6 @@
     └── 📁addons                             ; Plugin Folder
         └── 📁dialogue_manager               ; Dialogue manager 3 plugin
     └── 📁assets                             ; Assets Folder
-        └── 📁dialogues                      ; Dialogue Resources
         └── 📁fonts                          ; Font
         └── 📁sprites 
             └── 📁npcs
@@ -34,8 +33,7 @@
             └── 📁player
         └── 📁tilesets
     └── 📁autoload
-    └── 📁dialogue                           ; Dialogue manager
-        └── 📁resource                         ; Dialogue resource
+    └── 📁dialogue_balloon                   ; Custom Dialogue Balloon
     └── 📁interaction                        ; Interaction Manager
         └── 📁interaction area                 ; Interaction Area
     └── 📁scenes
@@ -43,6 +41,8 @@
             └── 📁calliopi
             └── 📁player
         └── 📁floors
+            └── 📁floor3                     ; Floor3 dialogue resource & scene
+            └── 📁house                      ; House dialogue resource & scene
         └── 📁mainn
         └── 📁mechanics
             └── 📁ascension
@@ -70,7 +70,7 @@ func _ready():
 #### Contoh
 ```
 # Define path dialogue resournya
-var dialogue_resource = load("res://dialogue/resources/test.dialogue")
+var dialogue_resource = load("res://scenes/floors/floor3/floor3.dialogue")
 
 # Panggil dialogoe manager
 func _on_interact():
