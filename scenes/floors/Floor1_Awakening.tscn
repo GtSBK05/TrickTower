@@ -1,10 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://u63n6gig61uh"]
+[gd_scene load_steps=12 format=3 uid="uid://u63n6gig61uh"]
 
 [ext_resource type="Texture2D" uid="uid://dh0kls217qd6c" path="res://assets/tilesets/floors/Tileset-PowerStation.png" id="1_1vuup"]
 [ext_resource type="Script" uid="uid://uar1qw6psfsr" path="res://scenes/floors/Floor1_Awakening.gd" id="1_c4nkj"]
 [ext_resource type="PackedScene" uid="uid://c1rvunvoe6a4t" path="res://scenes/characters/player/player.tscn" id="2_ujupn"]
+[ext_resource type="Script" uid="uid://b0rtkcjfnpydq" path="res://scenes/mechanics/common/pause_button.gd" id="3_a6uy5"]
 [ext_resource type="PackedScene" uid="uid://b58qr0t6ne1la" path="res://scenes/mechanics/floor1/PuzzleButtons.tscn" id="5_c4nkj"]
 [ext_resource type="PackedScene" uid="uid://uyd7na183hph" path="res://scenes/mechanics/floor1/PuzzlePillars.tscn" id="6_01pt3"]
+[ext_resource type="Texture2D" uid="uid://beed0k32k3n6d" path="res://assets/others/pause button.png" id="6_a6uy5"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_a6uy5"]
+action = &"pause_game"
+
+[sub_resource type="Shortcut" id="Shortcut_guqay"]
+events = [SubResource("InputEventAction_a6uy5")]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_706g5"]
 texture = ExtResource("1_1vuup")
@@ -245,6 +253,22 @@ sources/0 = SubResource("TileSetAtlasSource_706g5")
 position = Vector2(-1, 0)
 script = ExtResource("1_c4nkj")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause_Button" type="TextureButton" parent="CanvasLayer"]
+custom_minimum_size = Vector2(50, 0)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_bottom = 50.0
+grow_horizontal = 0
+shortcut = SubResource("Shortcut_guqay")
+texture_normal = ExtResource("6_a6uy5")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("3_a6uy5")
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_3chdn")
 format = 2
@@ -275,6 +299,8 @@ position = Vector2(-8, -96)
 
 [node name="PillarBottom" parent="PuzzlePillars" index="1"]
 position = Vector2(-8, 0)
+
+[connection signal="pressed" from="CanvasLayer/Pause_Button" to="CanvasLayer/Pause_Button" method="_on_Pressed"]
 
 [editable path="PuzzleButtons"]
 [editable path="PuzzlePillars"]
