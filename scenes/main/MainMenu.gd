@@ -1,8 +1,10 @@
 extends Control
 
-func _on_Start_pressed():
+func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/floors/Floor1_Awakening.tscn")
 
+func _on_exit_button_pressed() -> void:
+	get_tree().quit()
 
-func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/floors/Floor1_Awakening.tscn")
+func _on_setting_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main/Setting.tscn")
