@@ -1,15 +1,18 @@
 extends CanvasLayer
 
 @onready var pause_overlay = $Pause_Overlay
+@onready var pause_button = $Pause_Button
 
 
 func onready () -> void:
 	pause_overlay.hide()
 
 func _on_pause_button_pressed() -> void:
+	pause_button.texture_normal = load("res://assets/others/play button.png")
 	_togle_pause(true)
 
 func _on_resume_button_pressed() -> void:
+	pause_button.texture_normal = load("res://assets/others/pause button.png")
 	_togle_pause(false)
 
 func _on_quit_button_pressed() -> void:
