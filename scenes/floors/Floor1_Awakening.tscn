@@ -1,6 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://u63n6gig61uh"]
+[gd_scene load_steps=15 format=3 uid="uid://u63n6gig61uh"]
 
 [ext_resource type="Texture2D" uid="uid://dh0kls217qd6c" path="res://assets/tilesets/floors/Tileset-PowerStation.png" id="1_1vuup"]
+[ext_resource type="Script" uid="uid://br6cwdxoo8sp1" path="res://scenes/mechanics/common/pause_mechanic.gd" id="1_gdf1o"]
+[ext_resource type="Texture2D" uid="uid://beed0k32k3n6d" path="res://assets/others/pause button.png" id="2_o7snt"]
 [ext_resource type="PackedScene" uid="uid://c1rvunvoe6a4t" path="res://scenes/characters/player/player.tscn" id="2_ujupn"]
 [ext_resource type="PackedScene" uid="uid://b58qr0t6ne1la" path="res://scenes/mechanics/floor1/PuzzleButtons.tscn" id="5_c4nkj"]
 [ext_resource type="PackedScene" uid="uid://uyd7na183hph" path="res://scenes/mechanics/floor1/PuzzlePillars.tscn" id="6_01pt3"]
@@ -8,6 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://ctrfq1greu26f" path="res://scenes/objects/scroll.tscn" id="6_guqay"]
 [ext_resource type="Resource" uid="uid://hfny6x4pt1nf" path="res://scenes/floors/scroll1.dialogue" id="7_2pr1e"]
 [ext_resource type="Resource" uid="uid://v7na56vvt6ls" path="res://scenes/floors/scroll2.dialogue" id="8_gdf1o"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_5g440"]
+action = &"pause_game"
+
+[sub_resource type="Shortcut" id="Shortcut_2rtcu"]
+events = [SubResource("InputEventAction_5g440")]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_706g5"]
 texture = ExtResource("1_1vuup")
@@ -246,6 +254,59 @@ sources/0 = SubResource("TileSetAtlasSource_706g5")
 
 [node name="Floor1_Awakening" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("1_gdf1o")
+
+[node name="Pause_Button" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+shortcut = SubResource("Shortcut_2rtcu")
+texture_normal = ExtResource("2_o7snt")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Pause_Overlay" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.27450982)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Pause_Overlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = -52.5
+offset_right = 77.0
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/Pause_Overlay/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Game Dijeda"
+
+[node name="Continue_Button" type="Button" parent="CanvasLayer/Pause_Overlay/VBoxContainer"]
+layout_mode = 2
+text = "Lanjutkan"
+
+[node name="Quit_Button" type="Button" parent="CanvasLayer/Pause_Overlay/VBoxContainer"]
+layout_mode = 2
+text = "Keluar"
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_3chdn")
 format = 2
@@ -295,6 +356,10 @@ x_max = 525.0
 y1 = -293.0
 y2 = -25.0
 dialogue_resource = ExtResource("8_gdf1o")
+
+[connection signal="pressed" from="CanvasLayer/Pause_Button" to="CanvasLayer" method="_on_pause_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause_Overlay/VBoxContainer/Continue_Button" to="CanvasLayer" method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause_Overlay/VBoxContainer/Quit_Button" to="CanvasLayer" method="_on_quit_button_pressed"]
 
 [editable path="PuzzleButtons"]
 [editable path="PuzzlePillars"]

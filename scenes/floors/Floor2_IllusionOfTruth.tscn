@@ -1,9 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://cqfs66gthm5yn"]
+[gd_scene load_steps=26 format=3 uid="uid://cqfs66gthm5yn"]
 
 [ext_resource type="Script" uid="uid://b8ocjc47lw7qp" path="res://scenes/floors/Floor2_IllusionOfTruth.gd" id="1_prmx6"]
 [ext_resource type="Texture2D" uid="uid://ce28ketfeyhhp" path="res://assets/tilesets/floors/Tileset-GreenZone.png" id="1_rvl8g"]
 [ext_resource type="Texture2D" uid="uid://4dehxhrlnuvk" path="res://assets/tilesets/floors/Tileset-Factory.png" id="1_xn112"]
+[ext_resource type="Script" uid="uid://br6cwdxoo8sp1" path="res://scenes/mechanics/common/pause_mechanic.gd" id="2_as7j4"]
 [ext_resource type="Texture2D" uid="uid://cxumve11lrf6x" path="res://assets/tilesets/floors/Tileset-Swamp.png" id="2_xqsma"]
+[ext_resource type="Texture2D" uid="uid://beed0k32k3n6d" path="res://assets/others/pause button.png" id="3_c73hj"]
 [ext_resource type="Texture2D" uid="uid://cdntbiqltjtwp" path="res://assets/tilesets/floors/Tileset-ExclusionZone.png" id="3_xn112"]
 [ext_resource type="Texture2D" uid="uid://dh0kls217qd6c" path="res://assets/tilesets/floors/Tileset-PowerStation.png" id="4_prmx6"]
 [ext_resource type="PackedScene" uid="uid://c1rvunvoe6a4t" path="res://scenes/characters/player/player.tscn" id="5_xqsma"]
@@ -12,6 +14,12 @@
 [ext_resource type="Resource" uid="uid://dqhwd86xcepwa" path="res://scenes/floors/scroll3.dialogue" id="10_nsun0"]
 [ext_resource type="Resource" uid="uid://cq3ifq82vwxtx" path="res://scenes/floors/scroll4.dialogue" id="11_as7j4"]
 [ext_resource type="Resource" uid="uid://dof4uggrivua3" path="res://scenes/floors/scroll5.dialogue" id="12_c73hj"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_5g440"]
+action = &"pause_game"
+
+[sub_resource type="Shortcut" id="Shortcut_t5r5m"]
+events = [SubResource("InputEventAction_5g440")]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_xn112"]
 tile_data = PackedInt32Array(0, 196608, 1, 65536, 196608, 1)
@@ -850,6 +858,59 @@ pattern_2 = SubResource("TileMapPattern_b7sl0")
 [node name="Floor2_IllusionOfTruth" type="Node2D"]
 script = ExtResource("1_prmx6")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("2_as7j4")
+
+[node name="Pause_Button" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+shortcut = SubResource("Shortcut_t5r5m")
+texture_normal = ExtResource("3_c73hj")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Pause_Overlay" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.27450982)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Pause_Overlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = -52.5
+offset_right = 77.0
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/Pause_Overlay/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Game Dijeda"
+
+[node name="Continue_Button" type="Button" parent="CanvasLayer/Pause_Overlay/VBoxContainer"]
+layout_mode = 2
+text = "Lanjutkan"
+
+[node name="Quit_Button" type="Button" parent="CanvasLayer/Pause_Overlay/VBoxContainer"]
+layout_mode = 2
+text = "Keluar"
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_e7lth")
 format = 2
@@ -886,3 +947,7 @@ x_max = 201.0
 y1 = -711.0
 y2 = -156.0
 dialogue_resource = ExtResource("12_c73hj")
+
+[connection signal="pressed" from="CanvasLayer/Pause_Button" to="CanvasLayer" method="_on_pause_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause_Overlay/VBoxContainer/Continue_Button" to="CanvasLayer" method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause_Overlay/VBoxContainer/Quit_Button" to="CanvasLayer" method="_on_quit_button_pressed"]
