@@ -956,7 +956,7 @@ tile_map_data = PackedByteArray("AADw/wEAAAAAAAAAAAAPAAEAAAACAAAAAADx/wEAAAABAAA
 tile_set = SubResource("TileSet_p5quf")
 
 [node name="Player" parent="." instance=ExtResource("12_3e67i")]
-position = Vector2(-228, 14)
+position = Vector2(-116, 15.000001)
 scale = Vector2(0.63859254, 0.5626957)
 floor_constant_speed = true
 

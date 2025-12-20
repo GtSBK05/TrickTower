@@ -1,14 +1,29 @@
 ~ start
-Player: [[Hi|Hello|Howdy]], this is some dialogue.
-Adik: [[Hi|Hello|Howdy]], this is some dialogue2.
-Player: Here are some choices.
-- First one
-	Player: You picked the first one.
-	Adik: You picked the first one2.
-- Second one
-	Player: You picked the second one.
-	Adik: You picked the second one2.
-- Start again => start
-- End the conversation => END
-Player: For more information see the online documentation.
+if GameState.adik_dialogue_done == true
+	=> second
+else
+	=> first
+=> END
+
+~ first
+Adik: Apakah kamu yakin ingin menaklukan pilar tersebut kak?
+- Ya
+	Player: Ya, aku akan melakukan apapun demi kesembuhanmu
+- Tidak
+	Player: Tidak mungkin aku melewatkan kesempatan untuk menyembuhkan penyakitmu
+Adik: Baiklah kalau begitu, aku akan menghormati keputusanmu
+Adik: Tapi ingat, Lebih baik aku tetap sakit daripada kehilangan satu-satunya keluargaku
+Player: No, Non, Nein. Jangan lupa aku adalah orang terpintar sedunia
+Player: Menaklukan pilar seperti ini adalah perkara mudah
+Adik: Fu fu, Kalau begitu aku mengharapkan keselamatanmu
+Adik: Selamat jalan kakak
+set GameState.adik_dialogue_done = true
+=> END
+
+~ second
+Adik: Ada apa kak? ingin istirahat dulu sebelum menaklukan tower?
+Adik: Kalau begitu, istirahatlah yang cukup
+Adik: Omong-omong, kakak bisa berjalan ke kiri dan kanan dengan [W] dan [D]. Dan interact dengan [E]
+Adik: Kalau sudah cukup istirahat, kakak bisa interact patung di kanan sana
+Adik: Aku mengharapkan keselamatanmu
 => END
