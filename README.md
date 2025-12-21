@@ -7,6 +7,13 @@
 | Home  | [FREE - Pixel Art Sidescroller Asset Pack 32x32 Overworld](https://gandalfhardcore.itch.io/free-pixel-art-sidescroller-asset-pack-32x32-overworld)  |
 | Adik  | [Duskborne Elf-Sylvaris](https://kiyoz.itch.io/duskborne-enemy-1)  |
 
+## Audio
+| Tittle  | Author |
+| ------------- | ------------- |
+| [5 minutes - Study Timer Work with me Cat on a fluffy cloud](https://www.youtube.com/watch?v=HPnchW5gHwI)  | [Chill Pills Studio](https://www.youtube.com/@chillpillsstudio)  |
+| [Medieval Music – Cobblestone Village](https://www.youtube.com/watch?v=jZ7a1yPaJh0)  | [Brandon Fiechter's Music](https://www.youtube.com/@BrandonFiechter)  |
+| [Dark Souls III OST 10 - Vordt of the Boreal Valley](https://www.youtube.com/watch?v=wKPZMc0FpXo)  | [Games Music](https://www.youtube.com/@gamesmusic.)  |
+
 
 ## Resource
 | Name  | Link |
