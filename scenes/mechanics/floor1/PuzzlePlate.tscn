@@ -1,0 +1,114 @@
+[gd_scene load_steps=13 format=3 uid="uid://dfk4qbmpwaknl"]
+
+[ext_resource type="Script" uid="uid://5t2oj2qtkgpr" path="res://scenes/mechanics/floor1/PuzzlePlate.gd" id="1_8ii1h"]
+[ext_resource type="Texture2D" uid="uid://du3rob4p4ahmf" path="res://assets/sprites/objects/Generator.png" id="2_846xe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ii1h"]
+size = Vector2(48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usj6x"]
+atlas = ExtResource("2_846xe")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugkas"]
+atlas = ExtResource("2_846xe")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y84xs"]
+atlas = ExtResource("2_846xe")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2ryt"]
+atlas = ExtResource("2_846xe")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk1av"]
+atlas = ExtResource("2_846xe")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v728d"]
+atlas = ExtResource("2_846xe")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v2fv"]
+atlas = ExtResource("2_846xe")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7j8l"]
+atlas = ExtResource("2_846xe")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_78tn3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usj6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugkas")
+}],
+"loop": true,
+"name": &"Active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y84xs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2ryt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk1av")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v728d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v2fv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7j8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v2fv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v728d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk1av")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2ryt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usj6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugkas")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 7.0
+}]
+
+[node name="PuzzlePlate" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_8ii1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_8ii1h")
+
+[node name="PlateSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_78tn3")
+animation = &"Idle"
+frame = 9
+frame_progress = 0.82666785
+
+[node name="Indicator" type="Sprite2D" parent="."]
+
+[node name="TopMarker" type="Marker2D" parent="."]
+position = Vector2(0, -8)
+gizmo_extents = 25.0

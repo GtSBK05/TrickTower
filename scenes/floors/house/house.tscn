@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://bw6myjoxijc6f"]
+[gd_scene load_steps=30 format=4 uid="uid://bw6myjoxijc6f"]
 
 [ext_resource type="Script" uid="uid://br6cwdxoo8sp1" path="res://scenes/mechanics/common/pause_mechanic.gd" id="1_5g440"]
 [ext_resource type="Texture2D" uid="uid://u52mjjcitjsw" path="res://assets/tilesets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="1_7w882"]
@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://c1rvunvoe6a4t" path="res://scenes/characters/player/player.tscn" id="12_3e67i"]
 [ext_resource type="PackedScene" uid="uid://bfei28m2l5wce" path="res://scenes/characters/adik/adik.tscn" id="14_of46d"]
 [ext_resource type="PackedScene" uid="uid://dh2h8fyhuukqh" path="res://scenes/objects/statue.tscn" id="15_2d270"]
-[ext_resource type="AudioStream" uid="uid://c1grunf720oao" path="res://assets/audio/Medieval Music – Cobblestone Village.wav" id="18_vrbl7"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_5g440"]
 action = &"pause_game"
@@ -970,10 +969,6 @@ scale = Vector2(0.7157616, 0.6954969)
 
 [node name="Statue" parent="." instance=ExtResource("15_2d270")]
 position = Vector2(-323, 1)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("18_vrbl7")
-autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Pause_Button" to="CanvasLayer" method="_on_pause_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_Overlay/VBoxContainer/Continue_Button" to="CanvasLayer" method="_on_resume_button_pressed"]

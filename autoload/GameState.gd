@@ -1,8 +1,13 @@
 extends Node
 
 var scroll := 0
-var adik_dialogue_done = false
+var adik_dialogue_done := false
 
-# State if puzzle is complete 
-var floor1_done = true
-var floor2_done = true
+# Floor 1: 2 puzzle
+var floor1_puzzles := [false, false] # [switch, plate]
+
+func floor1_complete() -> bool:
+	return floor1_puzzles[0] and floor1_puzzles[1]
+
+func floor1_mark(idx: int) -> void:
+	floor1_puzzles[idx] = true
