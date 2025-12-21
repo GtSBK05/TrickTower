@@ -27,6 +27,6 @@ func _on_interact():
 	# Use dialogue manager
 	DialogueManager.show_dialogue_balloon(dialogue_resource, "start")
 	# Increment scroll count
-	Global.scroll += 1
+	GameState.scroll += 1
 	# Remove node
 	queue_free()
