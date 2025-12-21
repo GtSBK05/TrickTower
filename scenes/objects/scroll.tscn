@@ -1,100 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctrfq1greu26f"]
+[gd_scene load_steps=5 format=3 uid="uid://ctrfq1greu26f"]
 
 [ext_resource type="Script" uid="uid://c56mpotnvfp8e" path="res://scenes/objects/scroll.gd" id="1_v4pvp"]
 [ext_resource type="PackedScene" uid="uid://kheihk8j77jb" path="res://interaction/interaction area/interaction_area.tscn" id="2_icgfv"]
-[ext_resource type="Texture2D" uid="uid://i5q4vkme7iiu" path="res://assets/tilesets/floors/castle_tileset_400p.png" id="3_4etsb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6tik2"]
 radius = 54.00926
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fn3ci"]
 radius = 3.1622777
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1oo6b"]
-texture = ExtResource("3_4etsb")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-11:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-10:2/0 = 0
-11:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-10:3/0 = 0
-11:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-9:4/0 = 0
-10:4/0 = 0
-11:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
-10:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-9:6/0 = 0
-10:6/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_erfk7"]
-tile_size = Vector2i(32, 32)
-sources/1 = SubResource("TileSetAtlasSource_1oo6b")
 
 [node name="Scroll" type="RigidBody2D"]
 collision_layer = 4
@@ -107,7 +20,3 @@ shape = SubResource("CircleShape2D_6tik2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fn3ci")
-
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 255, 255, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0)
-tile_set = SubResource("TileSet_erfk7")
