@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cqfs66gthm5yn"]
+[gd_scene load_steps=28 format=3 uid="uid://cqfs66gthm5yn"]
 
 [ext_resource type="Script" uid="uid://b8ocjc47lw7qp" path="res://scenes/floors/Floor2_IllusionOfTruth.gd" id="1_prmx6"]
 [ext_resource type="Texture2D" uid="uid://ce28ketfeyhhp" path="res://assets/tilesets/floors/Tileset-GreenZone.png" id="1_rvl8g"]
@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://cq3ifq82vwxtx" path="res://scenes/floors/scroll4.dialogue" id="11_as7j4"]
 [ext_resource type="Resource" uid="uid://dof4uggrivua3" path="res://scenes/floors/scroll5.dialogue" id="12_c73hj"]
 [ext_resource type="Texture2D" uid="uid://bft7wqfktax48" path="res://assets/others/1.png" id="15_c73hj"]
+[ext_resource type="AudioStream" uid="uid://bsehklflwms2c" path="res://assets/audio/5_minutes____study_timer_work_with_me_cat_on_a_fluffy_cloud_timer_10min____studymusic__lofi.wav" id="16_t5r5m"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_5g440"]
 action = &"pause_game"
@@ -951,9 +952,13 @@ dialogue_resource = ExtResource("12_c73hj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(-4.196167e-05, -288)
+position = Vector2(203.99998, -287)
 scale = Vector2(5.3333335, 4.148148)
 texture = ExtResource("15_c73hj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_t5r5m")
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Pause_Button" to="CanvasLayer" method="_on_pause_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_Overlay/VBoxContainer/Continue_Button" to="CanvasLayer" method="_on_resume_button_pressed"]
