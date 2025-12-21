@@ -1,14 +1,64 @@
 ~ start
-Player: [[Hi|Hello|Howdy]], this is some dialogue.
-Calliopi: [[Hi|Hello|Howdy]], this is some dialogue2.
-Player: Here are some choices.
-- First one
-	Player: You picked the first one.
-	Calliopi: You picked the first one2.
-- Second one
-	Player: You picked the second one.
-	Calliopi: You picked the second one2.
-- Start again => start
-- End the conversation => END
-Player: For more information see the online documentation.
+Calliopi: Aku tidak menyangka ada yang sampai sejauh ini
+Calliopi: Katakan manusia, apa yang kamu inginkan sampai berusaha sekeras ini
+Calliopi: Apa itu kekuatan? kekayaan? kehormatan?
+if GameState.scroll == 5
+	=> good_end
+elif GameState.floor1_done == false and GameState.floor2_done == false
+	=> bad_end
+else
+	=> normal_end
+=> END
+
+
+~ normal_end
+Player: Aku hanya menginkan satu hal
+Player: Tidak ada yang aku inginkan selain kesembuhan adikku
+Player: Wahai dewi penciptaan, dapatkah anda mengabulkan keinginan kecilku ini?
+Calliopi: Apa kamu yakin hanya itu?
+Calliopi: Pada akhirnya manusia hanya sebatas ini
+Calliopi: Seharusnya aku tidak mendengarkan perkataan orang it
+Calliopi: Walaupun begitu aku terkejut masih ada seseorang sepertimu
+Calliopi: Semua manusia yang aku temui hanya mementingkan keegoisan mereka
+Calliopi: Baiklah, aku akan mengabulkan keinginanmu
+Calliopi: Semoga ini dapat membantumu walaupun hanya sedikit
+Player: Terimakasih banyak wahai dewiku
+Player: Ini merupakan hadiah paling besar dalam hidupku
+Calliopi: . . .
+Neutral END
+=> END
+
+~ good_end
+Player: Sebelum itu ada yang ingin aku tanyakan
+Player: Apakah dewi kehancuran it anda?
+Calliopi: . . .
+Player: Jadi tebakanku benar, seorang dengan kekuatan terbesar didunia
+Player: Rumor mengatakan bahwa pilar dibuat oleh dewi penciptaan
+Player: Siapa sangka bahwa andalah yang menciptakannya
+Calliopi: Setelah mengetahui itu apa kamu takut padaku
+Player: . . .
+Player: Tentu saja tidak
+Player: Siapa yang takut pada gadis secantik ini
+Calliopi: . . .
+Calliopi: Fu fu, kau memang manusia yang unik
+Calliopi: Semua orang takut begitu melihatku, tapi siapa sangka
+Calliopi: Fu fu
+Calliopi: Baiklah kalau begitu, sebutkan keinginanmu
+Player: Bagaimana jika aku ingin kamu pergi melihat dunia dan menjalani hidup bersamaku
+Calliopi: (⸝⸝⸝>﹏<⸝⸝⸝)
+Calliopi: Bicaramu besar juga
+Calliopi: Kalau begitu bersiaplah kamu harus mempertanggung jawabkan permohonanmu
+Player: Tentu saja, wahai dewiku
+Dengan begitu, Calliopi pergi melihat dunia untuk pertama kalinya
+Adik terkejut mendengar kakaknya membawa gadis setelah pulang menjelajah tower
+Calliopi juga menyembuhkan penyakit calon adik tirinya
+Ein yang merupakan half elf dan Calliopi yang merupakan dewi
+Mereka hidup bahagia bersama sampai ajal menjemput mereka berdua
+True END
+=> END
+
+~ bad_end
+Sophocles: "I would prefer even to fail with honor than win by cheating."
+Scott: "All good is hard. All evil is easy. Dying, losing, cheating, and mediocrity is easy. Stay away from easy."
+Bad END
 => END
