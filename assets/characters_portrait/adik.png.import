@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtg37po0fcjoj"
-path="res://.godot/imported/portrait.png-31c6022950696ea65cf5095d2c62a7b1.ctex"
+uid="uid://dn6kjv7d32jg3"
+path="res://.godot/imported/adik.png-e357d32da69e9510e3c295dcad7790be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/characters/calliopi/portrait.png"
-dest_files=["res://.godot/imported/portrait.png-31c6022950696ea65cf5095d2c62a7b1.ctex"]
+source_file="res://assets/characters_portrait/adik.png"
+dest_files=["res://.godot/imported/adik.png-e357d32da69e9510e3c295dcad7790be.ctex"]
 
 [params]
 

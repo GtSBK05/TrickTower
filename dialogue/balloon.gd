@@ -133,7 +133,7 @@ func apply_dialogue_line() -> void:
 	character_label.text = tr(dialogue_line.character, "dialogue")
 	
 	## Load character portrait
-	var portrait_path: String = "res://scenes/characters/%s/portrait.png" % dialogue_line.character
+	var portrait_path: String = "res://assets/characters_portrait/%s.png" % dialogue_line.character
 	if ResourceLoader.exists(portrait_path):
 		portrait.texture = load(portrait_path)
 	else:

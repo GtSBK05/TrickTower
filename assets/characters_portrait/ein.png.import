@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn6kjv7d32jg3"
-path="res://.godot/imported/portrait.png-6096902ee283918f7188b4a22f99bc0d.ctex"
+uid="uid://dsmuldfsw2ie7"
+path="res://.godot/imported/ein.png-f9bdad3f752d4a897f070d7ef3293f40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/characters/adik/portrait.png"
-dest_files=["res://.godot/imported/portrait.png-6096902ee283918f7188b4a22f99bc0d.ctex"]
+source_file="res://assets/characters_portrait/ein.png"
+dest_files=["res://.godot/imported/ein.png-f9bdad3f752d4a897f070d7ef3293f40.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsmuldfsw2ie7"
-path="res://.godot/imported/portrait.png-2b46b923def8cb3c24c5a8e8b53d5b56.ctex"
+uid="uid://dtg37po0fcjoj"
+path="res://.godot/imported/calliopi.png-1710ebad94ab3261c45340e5289559fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/characters/player/portrait.png"
-dest_files=["res://.godot/imported/portrait.png-2b46b923def8cb3c24c5a8e8b53d5b56.ctex"]
+source_file="res://assets/characters_portrait/calliopi.png"
+dest_files=["res://.godot/imported/calliopi.png-1710ebad94ab3261c45340e5289559fe.ctex"]
 
 [params]
 
