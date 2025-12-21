@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxd1hd0870h7i"
-path="res://.godot/imported/03.png-0b722a335f2840328e54358c00667729.ctex"
+path="res://.godot/imported/03.png-bf0b4912bc63765d2e9e491da70ebc46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Small Maps/Small Map 3/03.png"
-dest_files=["res://.godot/imported/03.png-0b722a335f2840328e54358c00667729.ctex"]
+source_file="res://assets/sprites/Small Maps/Small Map 3/03.png"
+dest_files=["res://.godot/imported/03.png-bf0b4912bc63765d2e9e491da70ebc46.ctex"]
 
 [params]
 
