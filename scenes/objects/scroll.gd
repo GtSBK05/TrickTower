@@ -18,7 +18,7 @@ func _ready():
 	var x = randf_range(x_min, x_max)
 	var y = y1 if randi() % 2 == 0 else y2
 	position = Vector2(x, y)
-	# Use intraction manager
+	# Use interaction manager
 	interaction_area.interact = Callable(self, "_on_interact")
 	
 	
