@@ -12,9 +12,9 @@ else
 
 
 ~ normal_end
-Player: Aku hanya menginkan satu hal
-Player: Tidak ada yang aku inginkan selain kesembuhan adikku
-Player: Wahai dewi penciptaan, dapatkah anda mengabulkan keinginan kecilku ini?
+Ein: Aku hanya menginkan satu hal
+Ein: Tidak ada yang aku inginkan selain kesembuhan adikku
+Ein: Wahai dewi penciptaan, dapatkah anda mengabulkan keinginan kecilku ini?
 Calliopi: Apa kamu yakin hanya itu?
 Calliopi: Pada akhirnya manusia hanya sebatas ini
 Calliopi: Seharusnya aku tidak mendengarkan perkataan orang it
@@ -22,33 +22,33 @@ Calliopi: Walaupun begitu aku terkejut masih ada seseorang sepertimu
 Calliopi: Semua manusia yang aku temui hanya mementingkan keegoisan mereka
 Calliopi: Baiklah, aku akan mengabulkan keinginanmu
 Calliopi: Semoga ini dapat membantumu walaupun hanya sedikit
-Player: Terimakasih banyak wahai dewiku
-Player: Ini merupakan hadiah paling besar dalam hidupku
+Ein: Terimakasih banyak wahai dewiku
+Ein: Ini merupakan hadiah paling besar dalam hidupku
 Calliopi: . . .
 Neutral END
 => END
 
 ~ good_end
-Player: Sebelum itu ada yang ingin aku tanyakan
-Player: Apakah dewi kehancuran it anda?
+Ein: Sebelum itu ada yang ingin aku tanyakan
+Ein: Apakah dewi kehancuran it anda?
 Calliopi: . . .
-Player: Jadi tebakanku benar, seorang dengan kekuatan terbesar didunia
-Player: Rumor mengatakan bahwa pilar dibuat oleh dewi penciptaan
-Player: Siapa sangka bahwa andalah yang menciptakannya
+Ein: Jadi tebakanku benar, seorang dengan kekuatan terbesar didunia
+Ein: Rumor mengatakan bahwa pilar dibuat oleh dewi penciptaan
+Ein: Siapa sangka bahwa andalah yang menciptakannya
 Calliopi: Setelah mengetahui itu apa kamu takut padaku
-Player: . . .
-Player: Tentu saja tidak
-Player: Siapa yang takut pada gadis secantik ini
+Ein: . . .
+Ein: Tentu saja tidak
+Ein: Siapa yang takut pada gadis secantik ini
 Calliopi: . . .
 Calliopi: Fu fu, kau memang manusia yang unik
 Calliopi: Semua orang takut begitu melihatku, tapi siapa sangka
 Calliopi: Fu fu
 Calliopi: Baiklah kalau begitu, sebutkan keinginanmu
-Player: Bagaimana jika aku ingin kamu pergi melihat dunia dan menjalani hidup bersamaku
+Ein: Bagaimana jika aku ingin kamu pergi melihat dunia dan menjalani hidup bersamaku
 Calliopi: (⸝⸝⸝>﹏<⸝⸝⸝)
 Calliopi: Bicaramu besar juga
 Calliopi: Kalau begitu bersiaplah kamu harus mempertanggung jawabkan permohonanmu
-Player: Tentu saja, wahai dewiku
+Ein: Tentu saja, wahai dewiku
 Dengan begitu, Calliopi pergi melihat dunia untuk pertama kalinya
 Adik terkejut mendengar kakaknya membawa gadis setelah pulang menjelajah tower
 Calliopi juga menyembuhkan penyakit calon adik tirinya

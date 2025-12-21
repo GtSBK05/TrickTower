@@ -8,13 +8,13 @@ else
 ~ first
 Adik: Apakah kamu yakin ingin menaklukan pilar tersebut kak?
 - Ya
-	Player: Ya, aku akan melakukan apapun demi kesembuhanmu
+	Ein: Ya, aku akan melakukan apapun demi kesembuhanmu
 - Tidak
-	Player: Tidak mungkin aku melewatkan kesempatan untuk menyembuhkan penyakitmu
+	Ein: Tidak mungkin aku melewatkan kesempatan untuk menyembuhkan penyakitmu
 Adik: Baiklah kalau begitu, aku akan menghormati keputusanmu
 Adik: Tapi ingat, Lebih baik aku tetap sakit daripada kehilangan satu-satunya keluargaku
-Player: No, Non, Nein. Jangan lupa aku adalah orang terpintar sedunia
-Player: Menaklukan pilar seperti ini adalah perkara mudah
+Ein: No, Non, Nein. Jangan lupa aku adalah orang terpintar sedunia
+Ein: Menaklukan pilar seperti ini adalah perkara mudah
 Adik: Fu fu, Kalau begitu aku mengharapkan keselamatanmu
 Adik: Selamat jalan kakak
 set GameState.adik_dialogue_done = true
@@ -23,7 +23,7 @@ set GameState.adik_dialogue_done = true
 ~ second
 Adik: Ada apa kak? ingin istirahat dulu sebelum menaklukan tower?
 Adik: Kalau begitu, istirahatlah yang cukup
-Adik: Omong-omong, kakak bisa berjalan ke kiri dan kanan dengan [W] dan [D]. Dan interact dengan [E]
+Adik: Omong-omong, kakak bisa berjalan ke kiri dan kanan dengan [W] dan [D], berlari dengan [Shift], Dan interact dengan [E]
 Adik: Kalau sudah cukup istirahat, kakak bisa interact patung di kanan sana
 Adik: Aku mengharapkan keselamatanmu
 => END
