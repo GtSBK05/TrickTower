@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cqfs66gthm5yn"]
+[gd_scene load_steps=30 format=3 uid="uid://cqfs66gthm5yn"]
 
 [ext_resource type="Script" uid="uid://b8ocjc47lw7qp" path="res://scenes/floors/Floor2_IllusionOfTruth.gd" id="1_prmx6"]
 [ext_resource type="Texture2D" uid="uid://ce28ketfeyhhp" path="res://assets/tilesets/floors/Tileset-GreenZone.png" id="1_rvl8g"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bft7wqfktax48" path="res://assets/others/1.png" id="15_c73hj"]
 [ext_resource type="PackedScene" uid="uid://c1cmhvik15pn3" path="res://scenes/mechanics/floor2/button_sequence/ButtonSequencePuzzle.tscn" id="16_t5r5m"]
 [ext_resource type="PackedScene" uid="uid://dipuqvluce0fa" path="res://scenes/mechanics/floor2/math_gate/MathGatePuzzle.tscn" id="17_y46fc"]
+[ext_resource type="AudioStream" uid="uid://bsehklflwms2c" path="res://assets/audio/5_minutes____study_timer_work_with_me_cat_on_a_fluffy_cloud_timer_10min____studymusic__lofi.wav" id="18_j17vv"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_5g440"]
 action = &"pause_game"
@@ -1092,6 +1093,10 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_j17vv")
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Pause_Button" to="CanvasLayer" method="_on_pause_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_Overlay/VBoxContainer/Continue_Button" to="CanvasLayer" method="_on_resume_button_pressed"]
