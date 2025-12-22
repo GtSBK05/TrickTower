@@ -11,11 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://dh0mcruhobca3" path="res://assets/sprites/Small Maps/Small Map 2/07.png" id="9_2mo6n"]
 [ext_resource type="Texture2D" uid="uid://ddi286t4cfvob" path="res://assets/sprites/Small Maps/Small Map 2/08.png" id="10_7b1wp"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6tik2"]
-radius = 44.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_fn3ci"]
 radius = 3.1622777
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6tik2"]
+radius = 44.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hxasu"]
 animations = [{
@@ -50,8 +50,12 @@ animations = [{
 }]
 
 [node name="Scroll" type="RigidBody2D"]
-collision_layer = 4
+collision_layer = 12
 script = ExtResource("1_v4pvp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+shape = SubResource("CircleShape2D_fn3ci")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_icgfv")]
 
@@ -59,13 +63,9 @@ script = ExtResource("1_v4pvp")
 position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_6tik2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -9)
-shape = SubResource("CircleShape2D_fn3ci")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -10)
 scale = Vector2(1.3810885, 1.5601004)
 sprite_frames = SubResource("SpriteFrames_hxasu")
 autoplay = "default"
-frame_progress = 0.4903207
+frame_progress = 0.25740308
