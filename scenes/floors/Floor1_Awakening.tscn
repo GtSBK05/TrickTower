@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c1rvunvoe6a4t" path="res://scenes/characters/player/player.tscn" id="2_ujupn"]
 [ext_resource type="PackedScene" uid="uid://bae7x4whvgh" path="res://scenes/objects/floor_1_door.tscn" id="6_a6uy5"]
 [ext_resource type="PackedScene" uid="uid://ctrfq1greu26f" path="res://scenes/objects/scroll.tscn" id="6_guqay"]
-[ext_resource type="Resource" uid="uid://hfny6x4pt1nf" path="res://scenes/floors/scroll1.dialogue" id="7_2pr1e"]
-[ext_resource type="Resource" uid="uid://v7na56vvt6ls" path="res://scenes/floors/scroll2.dialogue" id="8_gdf1o"]
+[ext_resource type="Resource" uid="uid://hfny6x4pt1nf" path="res://scenes/floors/scroll1.dialogue" id="7_o7snt"]
+[ext_resource type="Resource" uid="uid://v7na56vvt6ls" path="res://scenes/floors/scroll2.dialogue" id="8_2rtcu"]
 [ext_resource type="PackedScene" uid="uid://cffdlk3271t23" path="res://scenes/mechanics/floor1/PuzzleSwitch.tscn" id="9_2pr1e"]
 [ext_resource type="PackedScene" uid="uid://dfk4qbmpwaknl" path="res://scenes/mechanics/floor1/PuzzlePlate.tscn" id="10_gdf1o"]
 [ext_resource type="Texture2D" uid="uid://bft7wqfktax48" path="res://assets/others/1.png" id="11_o7snt"]
@@ -309,7 +309,7 @@ text = "Lanjutkan"
 layout_mode = 2
 text = "Keluar"
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." groups=["tilemap"]]
 tile_set = SubResource("TileSet_3chdn")
 format = 2
 layer_0/name = "Layer1"
@@ -324,15 +324,11 @@ position = Vector2(0, -7)
 
 [node name="Scroll1" parent="." instance=ExtResource("6_guqay")]
 position = Vector2(-567, -35)
-y_min = 0.0
-y_max = 600.0
-dialogue_resource = ExtResource("7_2pr1e")
+dialogue_resource = ExtResource("7_o7snt")
 
 [node name="Scroll2" parent="." instance=ExtResource("6_guqay")]
 position = Vector2(-101, -46)
-x_min = -101.0
-x_max = 337.0
-dialogue_resource = ExtResource("8_gdf1o")
+dialogue_resource = ExtResource("8_2rtcu")
 
 [node name="PuzzleSwitch" parent="." instance=ExtResource("9_2pr1e")]
 position = Vector2(496, -64)
