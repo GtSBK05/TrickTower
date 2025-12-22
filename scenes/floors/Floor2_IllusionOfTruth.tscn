@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cqfs66gthm5yn"]
+[gd_scene load_steps=29 format=3 uid="uid://cqfs66gthm5yn"]
 
 [ext_resource type="Script" uid="uid://b8ocjc47lw7qp" path="res://scenes/floors/Floor2_IllusionOfTruth.gd" id="1_prmx6"]
 [ext_resource type="Texture2D" uid="uid://ce28ketfeyhhp" path="res://assets/tilesets/floors/Tileset-GreenZone.png" id="1_rvl8g"]
@@ -15,7 +15,8 @@
 [ext_resource type="Resource" uid="uid://cq3ifq82vwxtx" path="res://scenes/floors/scroll4.dialogue" id="11_as7j4"]
 [ext_resource type="Resource" uid="uid://dof4uggrivua3" path="res://scenes/floors/scroll5.dialogue" id="12_c73hj"]
 [ext_resource type="Texture2D" uid="uid://bft7wqfktax48" path="res://assets/others/1.png" id="15_c73hj"]
-[ext_resource type="AudioStream" uid="uid://bsehklflwms2c" path="res://assets/audio/5_minutes____study_timer_work_with_me_cat_on_a_fluffy_cloud_timer_10min____studymusic__lofi.wav" id="16_t5r5m"]
+[ext_resource type="PackedScene" uid="uid://c1cmhvik15pn3" path="res://scenes/mechanics/floor2/button_sequence/ButtonSequencePuzzle.tscn" id="16_t5r5m"]
+[ext_resource type="PackedScene" uid="uid://dipuqvluce0fa" path="res://scenes/mechanics/floor2/math_gate/MathGatePuzzle.tscn" id="17_y46fc"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_5g440"]
 action = &"pause_game"
@@ -921,7 +922,7 @@ layer_0/tile_data = PackedInt32Array(10, 65536, 5, -65526, 65545, 0, 9, 65536, 5
 layer_1/name = "Layer2"
 layer_1/tile_data = PackedInt32Array(131067, 131081, 536870917, 196601, 131081, 536870917, 262135, 131081, 536870917, 327669, 131081, 536870917, 393203, 131081, 536870917, 65540, 196617, 536870917, 131078, 196617, 536870917, 196616, 196617, 536870917, 262154, 196617, 536870917, 327692, 196617, 536870917, 458735, 9, 4, 393232, 65545, 4, -262145, 65545, 2, -327684, 65545, 2, -327680, 65545, 2, -262141, 65545, 2, -655359, 131081, 536870917, -720898, 196617, 536870917, 327660, 524294, 0, 327659, 393222, 0, 262126, 524294, 4, 262127, 524294, 5, 131052, 524294, 5, 131051, 524294, 4, -196643, 589830, 1, -196642, 589830, 5, -196641, 589830, 3, -131101, 524294, 4, -131100, 524294, 5, -25, 393222, 0, -24, 524294, 0, -65521, 131072, 7, -196590, 0, 7, 131089, 65536, 7, -262122, 196608, 0, -262121, 131072, 0, -262120, 196608, 0, -131043, 131072, 0, -131041, 131072, 0, -131042, 196608, 0, 262163, 327680, 1342177282, 262164, 196608, 2, 262165, 327680, 1610612738)
 
-[node name="Floor1Door" parent="." instance=ExtResource("8_b7sl0")]
+[node name="Floor2Door" parent="." instance=ExtResource("8_b7sl0")]
 position = Vector2(0, -7)
 
 [node name="Player" parent="." instance=ExtResource("5_xqsma")]
@@ -952,14 +953,149 @@ dialogue_resource = ExtResource("12_c73hj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(203.99998, -287)
+position = Vector2(0, -296)
 scale = Vector2(5.3333335, 4.148148)
 texture = ExtResource("15_c73hj")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("16_t5r5m")
-autoplay = true
+[node name="ButtonSequencePuzzle" parent="." instance=ExtResource("16_t5r5m")]
+position = Vector2(-1072, -152)
+
+[node name="SequenceLabel" parent="ButtonSequencePuzzle/UI" index="0"]
+offset_right = 128.0
+
+[node name="CountdownLabel" parent="ButtonSequencePuzzle/UI" index="1"]
+offset_top = 32.0
+offset_right = 128.0
+offset_bottom = 55.0
+
+[node name="Board" parent="ButtonSequencePuzzle" index="2"]
+position = Vector2(1072, 72)
+
+[node name="Button_NE" parent="ButtonSequencePuzzle/Buttons" index="1"]
+position = Vector2(2048, 64)
+
+[node name="Button_SW" parent="ButtonSequencePuzzle/Buttons" index="2"]
+position = Vector2(-48, 344)
+
+[node name="Button_SE" parent="ButtonSequencePuzzle/Buttons" index="3"]
+position = Vector2(1936, 344)
+
+[node name="MathGatePuzzle" parent="." instance=ExtResource("17_y46fc")]
+position = Vector2(0, -456)
+
+[node name="QuestionLabel" parent="MathGatePuzzle/UI" index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -208.0
+offset_right = 24.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+
+[node name="ProgressLabel" parent="MathGatePuzzle/UI" index="1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+
+[node name="ResultLabel" parent="MathGatePuzzle/UI" index="2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -104.0
+offset_right = 24.0
+offset_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+
+[node name="AnswerA" parent="MathGatePuzzle/AnswerButtons" index="0"]
+position = Vector2(-192, -88)
+
+[node name="Label" parent="MathGatePuzzle/AnswerButtons/AnswerA" index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+
+[node name="AnswerB" parent="MathGatePuzzle/AnswerButtons" index="1"]
+position = Vector2(-128, -56)
+
+[node name="Label" parent="MathGatePuzzle/AnswerButtons/AnswerB" index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+
+[node name="AnswerC" parent="MathGatePuzzle/AnswerButtons" index="2"]
+position = Vector2(128, -56)
+
+[node name="Label" parent="MathGatePuzzle/AnswerButtons/AnswerC" index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+
+[node name="AnswerD" parent="MathGatePuzzle/AnswerButtons" index="3"]
+position = Vector2(192, -88)
+
+[node name="Label" parent="MathGatePuzzle/AnswerButtons/AnswerD" index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
 
 [connection signal="pressed" from="CanvasLayer/Pause_Button" to="CanvasLayer" method="_on_pause_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_Overlay/VBoxContainer/Continue_Button" to="CanvasLayer" method="_on_resume_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_Overlay/VBoxContainer/Quit_Button" to="CanvasLayer" method="_on_quit_button_pressed"]
+
+[editable path="ButtonSequencePuzzle"]
+[editable path="MathGatePuzzle"]

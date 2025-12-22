@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://u63n6gig61uh"]
+[gd_scene load_steps=16 format=3 uid="uid://u63n6gig61uh"]
 
 [ext_resource type="Texture2D" uid="uid://dh0kls217qd6c" path="res://assets/tilesets/floors/Tileset-PowerStation.png" id="1_1vuup"]
 [ext_resource type="Script" uid="uid://br6cwdxoo8sp1" path="res://scenes/mechanics/common/pause_mechanic.gd" id="1_gdf1o"]
@@ -6,12 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://c1rvunvoe6a4t" path="res://scenes/characters/player/player.tscn" id="2_ujupn"]
 [ext_resource type="PackedScene" uid="uid://bae7x4whvgh" path="res://scenes/objects/floor_1_door.tscn" id="6_a6uy5"]
 [ext_resource type="PackedScene" uid="uid://ctrfq1greu26f" path="res://scenes/objects/scroll.tscn" id="6_guqay"]
-[ext_resource type="Resource" uid="uid://hfny6x4pt1nf" path="res://scenes/floors/scroll1.dialogue" id="7_o7snt"]
-[ext_resource type="Resource" uid="uid://v7na56vvt6ls" path="res://scenes/floors/scroll2.dialogue" id="8_2rtcu"]
+[ext_resource type="Resource" uid="uid://hfny6x4pt1nf" path="res://scenes/floors/scroll1.dialogue" id="7_2pr1e"]
+[ext_resource type="Resource" uid="uid://v7na56vvt6ls" path="res://scenes/floors/scroll2.dialogue" id="8_gdf1o"]
 [ext_resource type="PackedScene" uid="uid://cffdlk3271t23" path="res://scenes/mechanics/floor1/PuzzleSwitch.tscn" id="9_2pr1e"]
 [ext_resource type="PackedScene" uid="uid://dfk4qbmpwaknl" path="res://scenes/mechanics/floor1/PuzzlePlate.tscn" id="10_gdf1o"]
 [ext_resource type="Texture2D" uid="uid://bft7wqfktax48" path="res://assets/others/1.png" id="11_o7snt"]
-[ext_resource type="AudioStream" uid="uid://bsehklflwms2c" path="res://assets/audio/5_minutes____study_timer_work_with_me_cat_on_a_fluffy_cloud_timer_10min____studymusic__lofi.wav" id="12_2rtcu"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_5g440"]
 action = &"pause_game"
@@ -309,7 +308,7 @@ text = "Lanjutkan"
 layout_mode = 2
 text = "Keluar"
 
-[node name="TileMap" type="TileMap" parent="." groups=["tilemap"]]
+[node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_3chdn")
 format = 2
 layer_0/name = "Layer1"
@@ -324,17 +323,19 @@ position = Vector2(0, -7)
 
 [node name="Scroll1" parent="." instance=ExtResource("6_guqay")]
 position = Vector2(-567, -35)
-x_min = -600.0
-x_max = -100.0
-y1 = -500.0
-dialogue_resource = ExtResource("7_o7snt")
+x_min = -610.0
+x_max = 337.0
+y1 = -30.0
+y2 = -30.0
+dialogue_resource = ExtResource("7_2pr1e")
 
 [node name="Scroll2" parent="." instance=ExtResource("6_guqay")]
 position = Vector2(-101, -46)
-x_min = 100.0
-x_max = 600.0
-y1 = -500.0
-dialogue_resource = ExtResource("8_2rtcu")
+x_min = -101.0
+x_max = 337.0
+y1 = -30.0
+y2 = -30.0
+dialogue_resource = ExtResource("8_gdf1o")
 
 [node name="PuzzleSwitch" parent="." instance=ExtResource("9_2pr1e")]
 position = Vector2(496, -64)
@@ -347,10 +348,6 @@ show_behind_parent = true
 position = Vector2(-0.00010681152, -127.99999)
 scale = Vector2(3.777778, 2.3703704)
 texture = ExtResource("11_o7snt")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_2rtcu")
-autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Pause_Button" to="CanvasLayer" method="_on_pause_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_Overlay/VBoxContainer/Continue_Button" to="CanvasLayer" method="_on_resume_button_pressed"]

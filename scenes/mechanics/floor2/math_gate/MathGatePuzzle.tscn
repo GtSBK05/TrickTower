@@ -1,0 +1,111 @@
+[gd_scene load_steps=6 format=3 uid="uid://dipuqvluce0fa"]
+
+[ext_resource type="Script" uid="uid://dquqbruorjohy" path="res://scenes/mechanics/floor2/math_gate/MathGatePuzzle.gd" id="1_qi5b3"]
+[ext_resource type="PackedScene" uid="uid://kheihk8j77jb" path="res://interaction/interaction area/interaction_area.tscn" id="2_fdwdy"]
+[ext_resource type="Script" uid="uid://damwqpr6pxpy2" path="res://scenes/mechanics/floor2/math_gate/MathBoard.gd" id="2_rjxw5"]
+[ext_resource type="Script" uid="uid://i5pwm4voke7p" path="res://scenes/mechanics/floor2/math_gate/MathAnswerButton.gd" id="4_fmyft"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iowlx"]
+radius = 32.0
+
+[node name="MathGatePuzzle" type="Node2D"]
+
+[node name="Logic" type="Node" parent="."]
+script = ExtResource("1_qi5b3")
+question_label_path = NodePath("../UI/QuestionLabel")
+progress_label_path = NodePath("../UI/ProgressLabel")
+result_label_path = NodePath("../UI/ResultLabel")
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="QuestionLabel" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="ProgressLabel" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="ResultLabel" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Board" type="Node2D" parent="."]
+script = ExtResource("2_rjxw5")
+puzzle_path = NodePath("../Logic")
+interaction_area_path = NodePath("InteractionArea")
+ia_collision_path = NodePath("InteractionArea/CollisionShape2D")
+
+[node name="InteractionArea" parent="Board" instance=ExtResource("2_fdwdy")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/InteractionArea"]
+shape = SubResource("CircleShape2D_iowlx")
+
+[node name="AnswerButtons" type="Node2D" parent="."]
+
+[node name="AnswerA" type="Node2D" parent="AnswerButtons"]
+script = ExtResource("4_fmyft")
+puzzle_path = NodePath("../../Logic")
+interaction_area_path = NodePath("InteractionArea")
+ia_collision_path = NodePath("InteractionArea/CollisionShape2D")
+label_path = NodePath("Label")
+
+[node name="Label" type="Label" parent="AnswerButtons/AnswerA"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="InteractionArea" parent="AnswerButtons/AnswerA" instance=ExtResource("2_fdwdy")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnswerButtons/AnswerA/InteractionArea"]
+shape = SubResource("CircleShape2D_iowlx")
+
+[node name="AnswerB" type="Node2D" parent="AnswerButtons"]
+script = ExtResource("4_fmyft")
+choice_index = 1
+puzzle_path = NodePath("../../Logic")
+interaction_area_path = NodePath("InteractionArea")
+ia_collision_path = NodePath("InteractionArea/CollisionShape2D")
+label_path = NodePath("Label")
+
+[node name="Label" type="Label" parent="AnswerButtons/AnswerB"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="InteractionArea" parent="AnswerButtons/AnswerB" instance=ExtResource("2_fdwdy")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnswerButtons/AnswerB/InteractionArea"]
+shape = SubResource("CircleShape2D_iowlx")
+
+[node name="AnswerC" type="Node2D" parent="AnswerButtons"]
+script = ExtResource("4_fmyft")
+choice_index = 2
+puzzle_path = NodePath("../../Logic")
+interaction_area_path = NodePath("InteractionArea")
+ia_collision_path = NodePath("InteractionArea/CollisionShape2D")
+label_path = NodePath("Label")
+
+[node name="Label" type="Label" parent="AnswerButtons/AnswerC"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="InteractionArea" parent="AnswerButtons/AnswerC" instance=ExtResource("2_fdwdy")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnswerButtons/AnswerC/InteractionArea"]
+shape = SubResource("CircleShape2D_iowlx")
+
+[node name="AnswerD" type="Node2D" parent="AnswerButtons"]
+script = ExtResource("4_fmyft")
+choice_index = 3
+puzzle_path = NodePath("../../Logic")
+interaction_area_path = NodePath("InteractionArea")
+ia_collision_path = NodePath("InteractionArea/CollisionShape2D")
+label_path = NodePath("Label")
+
+[node name="Label" type="Label" parent="AnswerButtons/AnswerD"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="InteractionArea" parent="AnswerButtons/AnswerD" instance=ExtResource("2_fdwdy")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnswerButtons/AnswerD/InteractionArea"]
+shape = SubResource("CircleShape2D_iowlx")

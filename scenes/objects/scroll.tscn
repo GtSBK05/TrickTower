@@ -1,71 +1,22 @@
-[gd_scene load_steps=14 format=3 uid="uid://ctrfq1greu26f"]
+[gd_scene load_steps=5 format=3 uid="uid://ctrfq1greu26f"]
 
 [ext_resource type="Script" uid="uid://c56mpotnvfp8e" path="res://scenes/objects/scroll.gd" id="1_v4pvp"]
 [ext_resource type="PackedScene" uid="uid://kheihk8j77jb" path="res://interaction/interaction area/interaction_area.tscn" id="2_icgfv"]
-[ext_resource type="Texture2D" uid="uid://yyjpje6t7clj" path="res://assets/sprites/Small Maps/Small Map 2/01.png" id="3_lokv0"]
-[ext_resource type="Texture2D" uid="uid://81fg1s28qjfr" path="res://assets/sprites/Small Maps/Small Map 2/02.png" id="4_yo5u6"]
-[ext_resource type="Texture2D" uid="uid://d18vs2ily76qg" path="res://assets/sprites/Small Maps/Small Map 2/03.png" id="5_khk85"]
-[ext_resource type="Texture2D" uid="uid://jyetfe8d73t0" path="res://assets/sprites/Small Maps/Small Map 2/04.png" id="6_jtg5c"]
-[ext_resource type="Texture2D" uid="uid://ber68qiq7lkfh" path="res://assets/sprites/Small Maps/Small Map 2/05.png" id="7_whue0"]
-[ext_resource type="Texture2D" uid="uid://dlc5qfimg4bm5" path="res://assets/sprites/Small Maps/Small Map 2/06.png" id="8_nqule"]
-[ext_resource type="Texture2D" uid="uid://dh0mcruhobca3" path="res://assets/sprites/Small Maps/Small Map 2/07.png" id="9_2mo6n"]
-[ext_resource type="Texture2D" uid="uid://ddi286t4cfvob" path="res://assets/sprites/Small Maps/Small Map 2/08.png" id="10_7b1wp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6tik2"]
+radius = 54.00926
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fn3ci"]
 radius = 3.1622777
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6tik2"]
-radius = 44.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_hxasu"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_lokv0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_yo5u6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_khk85")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_jtg5c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_whue0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_nqule")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_2mo6n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_7b1wp")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="Scroll" type="RigidBody2D"]
-collision_layer = 12
+collision_layer = 4
 script = ExtResource("1_v4pvp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -9)
-shape = SubResource("CircleShape2D_fn3ci")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_icgfv")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_6tik2")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -10)
-scale = Vector2(1.3810885, 1.5601004)
-sprite_frames = SubResource("SpriteFrames_hxasu")
-autoplay = "default"
-frame_progress = 0.25740308
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fn3ci")

@@ -1,0 +1,172 @@
+[gd_scene load_steps=15 format=3 uid="uid://c1cmhvik15pn3"]
+
+[ext_resource type="Script" uid="uid://boqrjjgvqoyfh" path="res://scenes/mechanics/floor2/button_sequence/ButtonSequencePuzzle.gd" id="1_2t71d"]
+[ext_resource type="Script" uid="uid://st6qciobpu8f" path="res://scenes/mechanics/floor2/button_sequence/SequenceBoard.gd" id="2_g0k5t"]
+[ext_resource type="PackedScene" uid="uid://kheihk8j77jb" path="res://interaction/interaction area/interaction_area.tscn" id="3_a1htv"]
+[ext_resource type="Script" uid="uid://bvw83awmfi0on" path="res://scenes/mechanics/floor2/button_sequence/SequenceButton.gd" id="4_62pd4"]
+[ext_resource type="Texture2D" uid="uid://mpoy7iuw6p2u" path="res://assets/sprites/objects/1.png" id="4_a1htv"]
+[ext_resource type="Texture2D" uid="uid://d376b35fymk8n" path="res://assets/sprites/objects/RunePad.png" id="5_g0k5t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g0k5t"]
+radius = 32.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpboc"]
+atlas = ExtResource("5_g0k5t")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqosg"]
+atlas = ExtResource("5_g0k5t")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l17n5"]
+atlas = ExtResource("5_g0k5t")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_318t7"]
+atlas = ExtResource("5_g0k5t")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf3yh"]
+atlas = ExtResource("5_g0k5t")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsuk7"]
+atlas = ExtResource("5_g0k5t")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a1htv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpboc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqosg")
+}],
+"loop": true,
+"name": &"Active",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l17n5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_318t7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf3yh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsuk7")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 4.0
+}]
+
+[node name="ButtonSequencePuzzle" type="Node2D"]
+
+[node name="Logic" type="Node" parent="."]
+script = ExtResource("1_2t71d")
+time_limit = 60.0
+sequence_label_path = NodePath("../UI/SequenceLabel")
+countdown_label_path = NodePath("../UI/CountdownLabel")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="SequenceLabel" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CountdownLabel" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Board" type="Node2D" parent="."]
+script = ExtResource("2_g0k5t")
+puzzle_path = NodePath("../Logic")
+interaction_area_path = NodePath("InteractionArea")
+ia_collision_path = NodePath("InteractionArea/CollisionShape2D")
+
+[node name="InteractionArea" parent="Board" instance=ExtResource("3_a1htv")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/InteractionArea"]
+shape = SubResource("CircleShape2D_g0k5t")
+
+[node name="Sprite2D" type="Sprite2D" parent="Board"]
+modulate = Color(1, 1, 1, 0.2509804)
+texture = ExtResource("4_a1htv")
+
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="Button_NW" type="Node2D" parent="Buttons"]
+script = ExtResource("4_62pd4")
+puzzle_path = NodePath("../../Logic")
+interaction_area_path = NodePath("InteractionArea")
+sprite_path = NodePath("AnimatedSprite2D")
+ia_collision_path = NodePath("InteractionArea/CollisionShape2D")
+active_tint = Color(0.1254902, 0.1254902, 0.1254902, 1)
+
+[node name="InteractionArea" parent="Buttons/Button_NW" instance=ExtResource("3_a1htv")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Button_NW/InteractionArea"]
+shape = SubResource("CircleShape2D_g0k5t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/Button_NW"]
+sprite_frames = SubResource("SpriteFrames_a1htv")
+animation = &"Active"
+
+[node name="Button_NE" type="Node2D" parent="Buttons"]
+script = ExtResource("4_62pd4")
+button_id = 1
+puzzle_path = NodePath("../../Logic")
+interaction_area_path = NodePath("InteractionArea")
+sprite_path = NodePath("AnimatedSprite2D")
+ia_collision_path = NodePath("InteractionArea/CollisionShape2D")
+active_tint = Color(0.1254902, 0.1254902, 0.1254902, 1)
+
+[node name="InteractionArea" parent="Buttons/Button_NE" instance=ExtResource("3_a1htv")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Button_NE/InteractionArea"]
+shape = SubResource("CircleShape2D_g0k5t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/Button_NE"]
+sprite_frames = SubResource("SpriteFrames_a1htv")
+animation = &"Active"
+
+[node name="Button_SW" type="Node2D" parent="Buttons"]
+script = ExtResource("4_62pd4")
+button_id = 2
+puzzle_path = NodePath("../../Logic")
+interaction_area_path = NodePath("InteractionArea")
+sprite_path = NodePath("AnimatedSprite2D")
+ia_collision_path = NodePath("InteractionArea/CollisionShape2D")
+active_tint = Color(0.1254902, 0.1254902, 0.1254902, 1)
+
+[node name="InteractionArea" parent="Buttons/Button_SW" instance=ExtResource("3_a1htv")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Button_SW/InteractionArea"]
+shape = SubResource("CircleShape2D_g0k5t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/Button_SW"]
+sprite_frames = SubResource("SpriteFrames_a1htv")
+animation = &"Active"
+
+[node name="Button_SE" type="Node2D" parent="Buttons"]
+script = ExtResource("4_62pd4")
+button_id = 3
+puzzle_path = NodePath("../../Logic")
+interaction_area_path = NodePath("InteractionArea")
+sprite_path = NodePath("AnimatedSprite2D")
+ia_collision_path = NodePath("InteractionArea/CollisionShape2D")
+active_tint = Color(0.1254902, 0.1254902, 0.1254902, 1)
+
+[node name="InteractionArea" parent="Buttons/Button_SE" instance=ExtResource("3_a1htv")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Button_SE/InteractionArea"]
+shape = SubResource("CircleShape2D_g0k5t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/Button_SE"]
+sprite_frames = SubResource("SpriteFrames_a1htv")
+animation = &"Active"
