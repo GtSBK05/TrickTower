@@ -1,8 +1,7 @@
-[gd_scene load_steps=31 format=4 uid="uid://bw6myjoxijc6f"]
+[gd_scene load_steps=27 format=4 uid="uid://bw6myjoxijc6f"]
 
-[ext_resource type="Script" uid="uid://br6cwdxoo8sp1" path="res://scenes/mechanics/common/pause_mechanic.gd" id="1_5g440"]
 [ext_resource type="Texture2D" uid="uid://u52mjjcitjsw" path="res://assets/tilesets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 5.png" id="1_7w882"]
-[ext_resource type="Texture2D" uid="uid://beed0k32k3n6d" path="res://assets/others/pause button.png" id="1_r2q1o"]
+[ext_resource type="Script" uid="uid://cm1oaailwvdee" path="res://scenes/floors/house/house.gd" id="1_vrbl7"]
 [ext_resource type="Texture2D" uid="uid://cyoly8fxdymma" path="res://assets/tilesets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 4.png" id="2_xc2a1"]
 [ext_resource type="Texture2D" uid="uid://bladl10bw0d7x" path="res://assets/tilesets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 3.png" id="3_of46d"]
 [ext_resource type="Texture2D" uid="uid://c2y7n1pnqxiqm" path="res://assets/tilesets/GandalfHardcore FREE Platformer Assets/GandalfHardcore Background layers/Normal BG/GandalfHardcore Background layers_layer 2.png" id="4_ro6o2"]
@@ -17,13 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://c1rvunvoe6a4t" path="res://scenes/characters/player/player.tscn" id="12_3e67i"]
 [ext_resource type="PackedScene" uid="uid://bfei28m2l5wce" path="res://scenes/characters/adik/adik.tscn" id="14_of46d"]
 [ext_resource type="PackedScene" uid="uid://dh2h8fyhuukqh" path="res://scenes/objects/statue.tscn" id="15_2d270"]
-[ext_resource type="AudioStream" uid="uid://c1grunf720oao" path="res://assets/audio/Medieval Music – Cobblestone Village.wav" id="18_vrbl7"]
-
-[sub_resource type="InputEventAction" id="InputEventAction_5g440"]
-action = &"pause_game"
-
-[sub_resource type="Shortcut" id="Shortcut_vrbl7"]
-events = [SubResource("InputEventAction_5g440")]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rxwvu"]
 texture = ExtResource("9_vi2h5")
@@ -836,59 +828,7 @@ sources/2 = SubResource("TileSetAtlasSource_h0hn5")
 sources/4 = SubResource("TileSetAtlasSource_of46d")
 
 [node name="House" type="Node2D"]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-process_mode = 3
-script = ExtResource("1_5g440")
-
-[node name="Pause_Button" type="TextureButton" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
-grow_horizontal = 0
-shortcut = SubResource("Shortcut_vrbl7")
-texture_normal = ExtResource("1_r2q1o")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="Pause_Overlay" type="ColorRect" parent="CanvasLayer"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.27450982)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Pause_Overlay"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -77.0
-offset_top = -52.5
-offset_right = 77.0
-offset_bottom = 52.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 10
-
-[node name="Label" type="Label" parent="CanvasLayer/Pause_Overlay/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "Game Dijeda"
-
-[node name="Continue_Button" type="Button" parent="CanvasLayer/Pause_Overlay/VBoxContainer"]
-layout_mode = 2
-text = "Lanjutkan"
-
-[node name="Quit_Button" type="Button" parent="CanvasLayer/Pause_Overlay/VBoxContainer"]
-layout_mode = 2
-text = "Keluar"
+script = ExtResource("1_vrbl7")
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -970,13 +910,5 @@ scale = Vector2(0.7157616, 0.6954969)
 
 [node name="Statue" parent="." instance=ExtResource("15_2d270")]
 position = Vector2(-323, 1)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("18_vrbl7")
-autoplay = true
-
-[connection signal="pressed" from="CanvasLayer/Pause_Button" to="CanvasLayer" method="_on_pause_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Pause_Overlay/VBoxContainer/Continue_Button" to="CanvasLayer" method="_on_resume_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Pause_Overlay/VBoxContainer/Quit_Button" to="CanvasLayer" method="_on_quit_button_pressed"]
 
 [editable path="Player"]

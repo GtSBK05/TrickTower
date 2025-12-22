@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b06821bb3xggt"]
+
+[ext_resource type="AudioStream" uid="uid://b3c5dp60vxs2p" path="res://assets/audio/Dark Souls III OST 10 - Vordt of the Boreal Valley.wav" id="1_vt3ey"]
+[ext_resource type="Script" uid="uid://bqbwu2830qodo" path="res://scenes/others/MusicManager/music_manager.gd" id="2_vm3hr"]
+
+[node name="Music_Manager" type="AudioStreamPlayer"]
+stream = ExtResource("1_vt3ey")
+autoplay = true
+bus = &"Ost"
+script = ExtResource("2_vm3hr")

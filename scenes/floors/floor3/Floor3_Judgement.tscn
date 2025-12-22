@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=4 uid="uid://ddgcq0b358fwm"]
 
+[ext_resource type="Script" uid="uid://6lied3qwheog" path="res://scenes/floors/floor3/floor_3_judgement.gd" id="1_ieyh8"]
 [ext_resource type="Texture2D" uid="uid://i5q4vkme7iiu" path="res://assets/tilesets/floors/castle_tileset_400p.png" id="1_rf0ac"]
-[ext_resource type="Script" uid="uid://br6cwdxoo8sp1" path="res://scenes/mechanics/common/pause_mechanic.gd" id="1_w8c2t"]
+[ext_resource type="Script" uid="uid://br6cwdxoo8sp1" path="res://scenes/others/PauseManager/pause_mechanic.gd" id="1_w8c2t"]
 [ext_resource type="Texture2D" uid="uid://beed0k32k3n6d" path="res://assets/others/pause button.png" id="2_ieyh8"]
 [ext_resource type="PackedScene" uid="uid://c1rvunvoe6a4t" path="res://scenes/characters/player/player.tscn" id="2_w8we8"]
 [ext_resource type="PackedScene" uid="uid://c7ien1cuj7tgf" path="res://scenes/characters/calliopi/callliopi.tscn" id="3_w8we8"]
-[ext_resource type="AudioStream" uid="uid://b3c5dp60vxs2p" path="res://assets/audio/Dark Souls III OST 10 - Vordt of the Boreal Valley.wav" id="6_ieyh8"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_5g440"]
 action = &"pause_game"
@@ -279,6 +279,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_rf0ac")
 
 [node name="Floor3_Judgement" type="Node2D"]
+script = ExtResource("1_ieyh8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -331,7 +332,7 @@ text = "Lanjutkan"
 
 [node name="Quit_Button" type="Button" parent="CanvasLayer/Pause_Overlay/VBoxContainer"]
 layout_mode = 2
-text = "Keluar"
+text = "Main Menu"
 
 [node name="background" type="TileMapLayer" parent="."]
 position = Vector2(0, 2)
@@ -351,10 +352,6 @@ position = Vector2(-229, -33)
 
 [node name="callliopi" parent="." instance=ExtResource("3_w8we8")]
 position = Vector2(297, -161)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_ieyh8")
-autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Pause_Button" to="CanvasLayer" method="_on_pause_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_Overlay/VBoxContainer/Continue_Button" to="CanvasLayer" method="_on_resume_button_pressed"]

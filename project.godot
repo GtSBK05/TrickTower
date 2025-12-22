@@ -22,6 +22,8 @@ InteractionManager="*res://interaction/InteractionManager.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 GameState="*res://autoload/GameState.gd"
+BGM="*res://scenes/others/MusicManager/music_manager.tscn"
+PauseLayer="*res://scenes/others/PauseManager/pause_layer.tscn"
 
 [dialogue_manager]
 

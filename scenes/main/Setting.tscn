@@ -59,7 +59,7 @@ text = "Music Volume"
 [node name="HSlider" type="HSlider" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 max_value = 1.0
-step = 0.5
+step = 0.05
 value = 0.5
 
 [node name="Button" type="Button" parent="VBoxContainer"]
@@ -68,4 +68,5 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Kembali"
 
+[connection signal="value_changed" from="VBoxContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://cim4j6xbxdgiy"]
+
+[ext_resource type="Script" uid="uid://br6cwdxoo8sp1" path="res://scenes/others/PauseManager/pause_mechanic.gd" id="1_tk2mr"]
+[ext_resource type="Texture2D" uid="uid://beed0k32k3n6d" path="res://assets/others/pause button.png" id="2_nrfeu"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_5g440"]
+action = &"pause_game"
+
+[sub_resource type="Shortcut" id="Shortcut_vrbl7"]
+events = [SubResource("InputEventAction_5g440")]
+
+[node name="PauseButton" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_tk2mr")
+
+[node name="Pause_Button" type="TextureButton" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+shortcut = SubResource("Shortcut_vrbl7")
+texture_normal = ExtResource("2_nrfeu")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Pause_Overlay" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.27450982)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause_Overlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = -52.5
+offset_right = 77.0
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Pause_Overlay/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Game Dijeda"
+
+[node name="Continue_Button" type="Button" parent="Pause_Overlay/VBoxContainer"]
+layout_mode = 2
+text = "Lanjutkan"
+
+[node name="Quit_Button" type="Button" parent="Pause_Overlay/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[connection signal="pressed" from="Pause_Button" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="Pause_Overlay/VBoxContainer/Continue_Button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Pause_Overlay/VBoxContainer/Quit_Button" to="." method="_on_quit_button_pressed"]

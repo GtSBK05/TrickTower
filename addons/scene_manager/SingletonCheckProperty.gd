@@ -27,6 +27,6 @@ func _on_checkbox_checked(is_checked):
 		edited_control.add_to_group(group_name, true)
 	else:
 		var index = new_groups.find(group_name)
-		new_groups.remove(index)
+		new_groups.remove_at(index)
 		edited_control.remove_from_group(group_name)
 	emit_changed('groups', new_groups)
