@@ -1,4 +1,4 @@
-# Tower of Loki
+# Trick Tower
 
 ## Assets
 | Used on  | Link |
@@ -88,6 +88,5 @@ func _on_interact():
 1. Tinggal dipake + specify next map
 #### Contoh
 ```
-# 
 SceneManager.change_scene("res://scenes/floors/Floor1_Awakening.tscn")
 ```
