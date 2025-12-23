@@ -953,7 +953,7 @@ dialogue_resource = ExtResource("12_c73hj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(0, -296)
+position = Vector2(-43.999996, -296)
 scale = Vector2(5.3333335, 4.148148)
 texture = ExtResource("15_c73hj")
 
@@ -1097,5 +1097,6 @@ horizontal_alignment = 1
 [connection signal="pressed" from="CanvasLayer/Pause_Overlay/VBoxContainer/Continue_Button" to="CanvasLayer" method="_on_resume_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause_Overlay/VBoxContainer/Quit_Button" to="CanvasLayer" method="_on_quit_button_pressed"]
 
+[editable path="Floor2Door"]
 [editable path="ButtonSequencePuzzle"]
 [editable path="MathGatePuzzle"]
